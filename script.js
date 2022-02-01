@@ -1,47 +1,23 @@
-let num = 266219;
+'use strict';
 
-num = num.toString().split('');
+let argument = '1465d;fllsdf;s;amsd;fanvkedfwlafnshbrkjwefbahwfbavwaherbfa4'
 
-let multyply = +num[0];
+const lesson04 = function(arg){
+    let type = typeof arg;
+    let cleanArg = arg.trim();
 
-for(let i = 1; i < num.length; i++){
-    multyply *= + num[i];
+    if(type !== 'string'){
+       alert('Введите буквы') 
+    }
+
+    if(cleanArg.length >= 30){
+        return arg = cleanArg.slice(0, 30) + cleanArg.substr(31).replace(cleanArg.substr(31), '...')     
+    }else{
+        return arg = cleanArg
+    }
+
 }
 
-num = multyply ** 3;
+argument = lesson04(argument)
 
-console.log(num.toString().substring(0, 2));
-
-//lesson 3-1
-
-let lang = 'en';
-
-let rusWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-let engWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
-let rusEngWeeks = [
-    ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
-];
-
-if(lang == 'ru'){
-    console.log(rusWeek);
-}else{
-    console.log(engWeek);
-}
-
-switch (lang){
-    case 'ru':
-        console.log(rusWeek);
-        break;
-    case 'en':
-        console.log(engWeek);
-        break;
-}
-
-lang == 'ru'? console.log(rusEngWeeks[0]) : console.log(rusEngWeeks[1]);
-
-//lesson 3-2
-
-let namePerson = "Артем";
-
-namePerson == "Артем"? console.log('Директор') : namePerson == "Александр"? console.log('преподаватель') : console.log('студент');
+console.log(argument)
